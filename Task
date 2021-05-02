@@ -1,0 +1,31 @@
+Write a bot that will respond to three groups of emoticons (joy, sadness and irritation) and give appropriate answers, taking into account the change in the emotional state of the interlocutor. Think up the bot's answers yourself.
+
+The client sends emoticons messages.
+The bot responds to the first message in a conversation with a greeting depending on the smiley face.
+If the message contains text, the bot replies "I don't understand you" and resets the conversation context
+The client in one message sends only one smiley from one of the groups presented. The bot should consider the context of only one previous message.
+
+Conversation example:
+Client: 😟
+Bot: Hi. Do not be sad
+Client: 😡
+Bot: You seem to get even worse
+Client: 😀
+Bot: Glad you're in a good mood again!
+Client: Thank you🤩
+Bot: I don't understand you
+Conversation is cleared
+Client: 😂
+Bot: Hi. You are very funny
+… ..
+
+Write data into two tables - a table with messages and a table with client sessions.
+In the message table, the columns - message id, message time, session id, message text, client id.
+In the table of sessions - session id, session start time, session end time.
+The session is considered completed if there are no messages for more than 1 minute.
+Linking tables by session id.
+
+Session id - unique, changes when the context is cleared and the conversation starts
+message id - unique for each message
+client id - unique for each client.         
+
